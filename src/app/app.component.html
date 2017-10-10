@@ -1,20 +1,52 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="page-container" 
+    infinite-scroll
+    [infiniteScrollDistance] = "0"
+    (scrolled)="onScroll()">
+  <div class="post-outer-container" *ngFor="let post of posts">
+    <div class="post-inner-container post">
+      <div class="post-header">
+        <div class="post-user-info user-info">
+          <div class="user-info">
+            <div class="user-info-img-contaienr">
+              <div class="user-info-img-inner-container">
+                  <img class="user-info-img-contaienr__avatar" [src]="post.userImageUrl" alt="user picture">
+                  <div class="user-info-img-contaienr__status"></div>
+              </div>
+            </div>
+            <div class="user-info-details-container">
+              <h3 class="user-info-details-container__name">{{post.userFullName}}</h3>
+              <p class="user-info-details-container__title">{{post.userType}}</p>
+              <p class="user-info-details-container__time">
+                من {{ post.postTime }}
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="post-more-container">
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="post-body">
+        <p class="post-body__text">{{post.body}}</p>
+      </div>
+      <div class="post-footer">
+        <div class="like-comment-share-container">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span class="like-comment-share-container__numbers">{{post.numberOfLikes}}</span>
+            <span class="like-comment-share-container__operation">اعجاب</span>
+        </div>
+        <div class="like-comment-share-container">
+            <i class="fa fa-commenting" aria-hidden="true"></i>
+            <span class="like-comment-share-container__numbers">{{post.numberOfComments}}</span>
+            <span class="like-comment-share-container__operation">تعليق</span>
+        </div>
+        <div class="like-comment-share-container">
+            <i class="fa fa-share" aria-hidden="true"></i>
+            <span class="like-comment-share-container__numbers">{{post.numberOfShares}}</span>
+            <span class="like-comment-share-container__operation">مشاركة</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
