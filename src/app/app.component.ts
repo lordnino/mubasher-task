@@ -31,11 +31,15 @@ export class AppComponent {
     this.postsService.getPosts(this.page, this.size).subscribe(data => {
       console.log(data);
       this.posts = data;
-      this.posts.forEach(post => {
-        let day = this.m.locale("ar");
-        post.postTime = day.fromNow(post.postTime);
-      })
+      this.formatPostTime();
     }, err => console.log(err));
+  }
+
+  formatPostTime(){
+    this.posts.forEach(post => {
+      let day = this.m.locale("ar");
+      post.postTime = day.fromNow(post.postTime);
+    })
   }
 
   onScroll() {
@@ -51,6 +55,7 @@ export class AppComponent {
         }
         console.log(data);
         this.posts = this.posts.concat(data);
+        this.formatPostTime();
         console.log(this.posts);
       }, err => console.log(err)
         , () => {
