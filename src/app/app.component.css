@@ -1,3 +1,5 @@
+/* Start of Global Style */
+
 html,
 body {
   background-color: #b5b8ba;
@@ -8,13 +10,16 @@ p {
   margin: 0px;
 }
 
+/* End of Global Style */
+
+/* Start Of Container Style */
+
 .page-container {
   margin: 30px 70px;
   direction: rtl;
 }
 
 .post-outer-container {
-  /* margin: 10px 0px; */
   width: 100%;
   margin: 20px auto 40px;
   border-radius: 5px;
@@ -27,6 +32,10 @@ p {
   width: 95%;
   margin: 0 auto;
 }
+
+/* End Of Container Style */
+
+/* Start Of Post Header Style */
 
 .post-header {
   display: flex;
@@ -64,7 +73,7 @@ p {
   right: -3px;
   height: 18px;
   width: 18px;
-  background-color: #65C110;
+  /* background-color: #65C110; */
   border-radius: 50%;
 }
 
@@ -88,8 +97,10 @@ p {
 
 .user-info-details-container__time {}
 
+/* End Of post header Style */
 
-/* post body */
+
+/* Start of post body */
 
 .post-body {
   padding: 30px 40px 30px 20px;
@@ -103,10 +114,10 @@ p {
 }
 
 
-/* post body end */
+/* End of post body end */
 
 
-/* post footer start */
+/* Start Of post footer start */
 
 .post-footer {
   display: flex;
@@ -122,4 +133,5 @@ p {
 }
 
 
-/* post footer end */
+/* End Of post footer end */
+

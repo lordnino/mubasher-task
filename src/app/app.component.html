@@ -1,7 +1,4 @@
-<div class="page-container" 
-    infinite-scroll
-    [infiniteScrollDistance] = "0"
-    (scrolled)="onScroll()">
+<div class="page-container" infinite-scroll [infiniteScrollDistance]="0" (scrolled)="onScroll()">
   <div class="post-outer-container" *ngFor="let post of posts">
     <div class="post-inner-container post">
       <div class="post-header">
@@ -9,8 +6,8 @@
           <div class="user-info">
             <div class="user-info-img-contaienr">
               <div class="user-info-img-inner-container">
-                  <img class="user-info-img-contaienr__avatar" [src]="post.userImageUrl" alt="user picture">
-                  <div class="user-info-img-contaienr__status"></div>
+                <img class="user-info-img-contaienr__avatar" [src]="post.userImageUrl" alt="user picture">
+                <div class="user-info-img-contaienr__status" [style.background-color]="post.userIsOnline ? '#65c110' : '#666'"></div>
               </div>
             </div>
             <div class="user-info-details-container">
@@ -32,19 +29,19 @@
       </div>
       <div class="post-footer">
         <div class="like-comment-share-container">
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-            <span class="like-comment-share-container__numbers">{{post.numberOfLikes}}</span>
-            <span class="like-comment-share-container__operation">اعجاب</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <span class="like-comment-share-container__numbers">{{post.numberOfLikes}}</span>
+          <span class="like-comment-share-container__operation">اعجاب</span>
         </div>
         <div class="like-comment-share-container">
-            <i class="fa fa-commenting" aria-hidden="true"></i>
-            <span class="like-comment-share-container__numbers">{{post.numberOfComments}}</span>
-            <span class="like-comment-share-container__operation">تعليق</span>
+          <i class="fa fa-commenting" aria-hidden="true"></i>
+          <span class="like-comment-share-container__numbers">{{post.numberOfComments}}</span>
+          <span class="like-comment-share-container__operation">تعليق</span>
         </div>
         <div class="like-comment-share-container">
-            <i class="fa fa-share" aria-hidden="true"></i>
-            <span class="like-comment-share-container__numbers">{{post.numberOfShares}}</span>
-            <span class="like-comment-share-container__operation">مشاركة</span>
+          <i class="fa fa-share" aria-hidden="true"></i>
+          <span class="like-comment-share-container__numbers">{{post.numberOfShares}}</span>
+          <span class="like-comment-share-container__operation">مشاركة</span>
         </div>
       </div>
     </div>
