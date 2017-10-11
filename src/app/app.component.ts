@@ -1,6 +1,6 @@
 import { PostsService } from './posts.service';
 import { Component } from '@angular/core';
-import * as moment from 'moment';
+import * as moment from 'moment/moment';
 
 
 @Component({
